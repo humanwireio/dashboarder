@@ -1,0 +1,28 @@
+/* CSS declarations go here */
+
+@viewport {
+  zoom: 1.0;
+  width: extend-to-zoom;
+}
+
+@-ms-viewport {
+  zoom: 1.0;
+  width: extend-to-zoom;
+}
+
+body {
+  background: black;
+  color: white;
+}
+
+.navbar {
+  margin-bottom:0;
+}
+
+.navbar .container { height: 28px; }
+
+.active {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+}

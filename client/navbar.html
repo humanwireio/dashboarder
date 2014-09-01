@@ -1,0 +1,9 @@
+<template name="navbar">
+<nav class="navbar navbar-inverse" role="navigation">
+    <ul class="nav navbar-nav">
+        {{#each keys}}
+        <li class="{{isActive this}}"><a class="nav-link" href="#">{{this}}</a></li>
+        {{/each}}
+    </ul>
+</nav>
+</template>
