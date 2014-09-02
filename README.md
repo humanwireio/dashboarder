@@ -1,7 +1,9 @@
 dashboarder
 =======
 
-a meteor template to make dashboards[Demo](http://dashboarder.meteor.com)
+a meteor template to make dashboards
+
+[Demo](http://dashboarder.meteor.com)
 
 What is it
 ------
