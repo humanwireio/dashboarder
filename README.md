@@ -3,4 +3,4 @@ dashboarder
 
 a meteor template to make dashboards
 
-[demo](dashboarder.meteor.com)
+[demo](http://dashboarder.meteor.com)
