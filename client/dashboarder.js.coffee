@@ -3,7 +3,7 @@ if Session.get("cur_page")==undefined
 
 Session.page_tree =
                     "TEST1":
-                         "Test11":"status"
+                         "Test11":"self_generating_sites"
                     "TEST2":
                          "Test21": 
                                "test211":"status",

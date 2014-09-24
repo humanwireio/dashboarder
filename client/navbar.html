@@ -1,5 +1,5 @@
 <template name="navbar">
-<nav class="navbar navbar-inverse" role="navigation">
+<nav class="navbar navbar-inverse {{fixIfFirst keys}}" role="navigation">
     <ul class="nav navbar-nav">
         {{#each keys}}
         <li class="{{isActive this}}"><a class="nav-link" href="#">{{this}}</a></li>

@@ -1,0 +1,40 @@
+<template name="self_generating_sites">
+<h2>What is it?</h2>
+<p>The structure of this site is determined by a single hashmap defined as a javascript variable called Session.page_tree
+. The navbar as well as what views (html files) to associate with each nav selection is determined by the page_tree variable.
+</p>
+<h2>What's it good for?</h2>
+<p>Because this format allows for easy creation of small tree pages, it is ideal for dashboards and personal sites since they will likely have a limited number of pages with a manually defined structure.
+Because this page doesn't (currently) allow for external linking to specific pages, it currently it best suited for dashboards. The addition of a page router (such as iron router) would change this and will be added to this page in the future. If you are interested in the code for this please contact me as I have yet to put it in a public repo.
+</p>
+<h2>Where's the code?</h2>
+<a href="http://www.github.com/humanwireio/dashboarder">dashboarder on github</a>
+<br>
+<div class="row">
+<pre class="col-md-7 col-md-offset-2">
+Session.page_tree =
+                    "TEST1":
+                         "Test11":"status"
+                    "TEST2":
+                         "Test21": 
+                               "test211":"status",
+                         "Test22":
+                               "test221":"status"
+                    "TEST3":
+                         "Test31":
+                               "test311":"status"
+                         "Test32":
+                               "test321":"status"
+                    "TEST4":
+                         "Test41":
+                               "test411":"status"
+                               "test412":"status",
+                               "test413":"status",
+                               "test414":"status",
+                               "test415":"status"  
+                    "TEST5": 
+                         "Test51":"status"
+                         "Test52":"status"
+</pre>
+</div>
+</template>
