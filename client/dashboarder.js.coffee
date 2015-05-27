@@ -1,6 +1,3 @@
-if Session.get("cur_page")==undefined
-  Session.set("cur_page", ["TEST1","Test11"])
-
 Session.page_tree =
                     "TEST1":
                          "Test11":"self_generating_sites"
@@ -34,7 +31,7 @@ Session.tree_return = (page, tree)->
     i++
   return cur
 
-#TODO: fix the following
+#TODO: fix the following, currnetly all names must be unique
 Session.find_elem = (elem, tree) ->
   out = false
   if _.contains(_.keys(tree), elem)
@@ -49,4 +46,13 @@ Session.find_elem = (elem, tree) ->
                  out = temp
              )
   return out
-  
+
+Session.find_path = (path, tree) ->
+  out = false
+
+
+if Session.get("cur_page")==undefined
+  Session.set("cur_page", ["TEST1","Test11"])
+  pathname =  _.chain(window.location.pathname.split('/')).filter((tok)->tok not in [undefined, '', false])
+  if Session.tree_return(pathname, Session.page_tree)
+    Session.set "cur_age", pathname

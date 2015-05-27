@@ -1,5 +1,8 @@
 <template name="panel">
 <div id="panel">
+{{#if doInPageNavbar}}
+{{>inPageNavbar}}
+{{/if}}
 {{#with getView}}
   {{> template}}
 {{/with}}
