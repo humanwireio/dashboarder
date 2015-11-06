@@ -36,6 +36,12 @@ if Session.get("cur_page")==undefined
     #analytics.page("About")
     Session.set("cur_page", [_.keys(Session.page_tree)[0]])
 
+Tracker.autorun ->
+  cur_page = Session.get("cur_page")
+  urlized_cur_page = cur_page.map((e)->e.split(" ").join("_"))
+  #analytics.page(urlized_cur_page)
+  window.location.href = Meteor.baseUrl+"#"+urlized_cur_page.join('/')
+
 #returns value of page in tree
 Session.tree_return = (page, tree)->
   cur = tree
