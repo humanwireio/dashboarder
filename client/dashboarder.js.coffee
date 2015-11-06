@@ -22,6 +22,20 @@ Session.page_tree =
                          "Test51":"status"
                          "Test52":"status"
 
+#Manage URL
+if Session.get("cur_page")==undefined
+  start_url = window.location.href
+  Meteor.testURL = start_url
+  unformatted_page = start_url.split("#")
+  Meteor.baseUrl = unformatted_page[0]
+  if unformatted_page.length > 1
+    #analytics.page(unformatted_page[1])
+    formatted_page = unformatted_page[1].split('/').map((e)->e.split("_").join(" "))
+    Session.set("cur_page", formatted_page)
+  else
+    #analytics.page("About")
+    Session.set("cur_page", [_.keys(Session.page_tree)[0]])
+
 #returns value of page in tree
 Session.tree_return = (page, tree)->
   cur = tree
@@ -47,8 +61,17 @@ Session.find_elem = (elem, tree) ->
              )
   return out
 
-Session.find_path = (path, tree) ->
-  out = false
+if Session.get("cur_data")==undefined
+  Session.set("cur_data", "")
+
+#cascade down page tree when cur_page is set, always fall to a leaf
+Tracker.autorun ->
+  cur_page = Session.get("cur_page")
+  sub_tree = Session.tree_return(cur_page, Session.page_tree)
+  switch typeof(sub_tree)
+    when 'object'
+      first_child = _.keys(sub_tree)[0]
+      Session.set("cur_page", cur_page.concat([first_child]))
 
 
 if Session.get("cur_page")==undefined
