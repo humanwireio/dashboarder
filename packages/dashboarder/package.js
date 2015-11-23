@@ -15,7 +15,24 @@ Package.onUse(function(api) {
   api.use('ecmascript');
   api.use('templating','client');
   api.use('coffeescript');
-  api.addFiles('dashboarder.html', 'client');
+  api.use('underscore');
+  api.use('session');
+  api.use('tracker');
+
+  api.addFiles('navbars.html','client');
+  api.addFiles('navbars.coffee','client');
+
+  api.addFiles('navbar.html','client');
+  api.addFiles('navbar.coffee','client');
+
+  api.addFiles('panel.html','client');
+  api.addFiles('panel.coffee','client');
+
+  api.addFiles('blank.html','client');
+
+  api.addFiles('dashboarder.html','client');
+  api.addFiles('dashboarder.coffee','client');
+  api.addFiles('dashboarder.css','client');
 });
 
 Package.onTest(function(api) {
