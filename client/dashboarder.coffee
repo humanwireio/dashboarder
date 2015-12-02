@@ -1,8 +1,9 @@
-Session.page_tree =
+Session.set("page_tree",
                     "TEST1":
                          "Test11":"self_generating_sites"
+                         "test":"graph"
                     "TEST2":
-                         "Test21": 
+                         "Test21":
                                "test211":"status",
                          "Test22":
                                "test221":"status"
@@ -17,8 +18,9 @@ Session.page_tree =
                                "test412":"status",
                                "test413":"status",
                                "test414":"status",
-                               "test415":"status"  
-                    "TEST5": 
+                               "test415":"status"
+                    "TEST5":
                          "Test51":"status"
                          "Test52":"status"
 
+)

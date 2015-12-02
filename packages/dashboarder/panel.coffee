@@ -1,7 +1,7 @@
 Deps.autorun ->
   Template.panel.helpers({
     getView: ()->
-      sub = Session.tree_return(Session.get("cur_page"), Session.page_tree)
+      sub = Session.tree_return(Session.get("cur_page"), Session.get("page_tree"))
       if typeof(sub) == "string"
         return {"template": Template[sub]}
       else

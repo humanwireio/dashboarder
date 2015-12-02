@@ -1,7 +1,7 @@
 <template name="self_generating_sites">
     <div class="nav-heading" data-title="What is it">
         <h2>What is it?</h2>
-        <p>The structure of this site is determined by a single hashmap defined as a javascript variable called Session.page_tree
+        <p>The structure of this site is determined by a single hashmap defined as a Meteor session variable called page_tree
         . The navbar as well as what views (html files) to associate with each nav selection is determined by the page_tree variable.
         </p>
     </div>
@@ -17,11 +17,11 @@
         <br>
         <div class="row">
         <pre class="col-md-7 col-md-offset-2">
-        Session.page_tree =
+        Session.set("page_tree",
                             "TEST1":
                                  "Test11":"self_generating_sites"
                             "TEST2":
-                                 "Test21": 
+                                 "Test21":
                                        "test211":"status",
                                  "Test22":
                                        "test221":"status"
@@ -36,10 +36,11 @@
                                        "test412":"status",
                                        "test413":"status",
                                        "test414":"status",
-                                       "test415":"status"  
-                            "TEST5": 
+                                       "test415":"status"
+                            "TEST5":
                                  "Test51":"status"
                                  "Test52":"status"
+                  )
         </pre>
         </div>
     </div>

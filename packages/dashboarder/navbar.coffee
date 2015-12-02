@@ -11,7 +11,7 @@ Template.navbar.helpers
   fixIfFirst: (keys)->
     #to stop first navbar from affixing to top stop this function
     #from returning anything and remove body padding-top in dashboarder.css
-    if (_.difference(keys,_.keys(Session.page_tree)).length == 0)
+    if (_.difference(keys,_.keys(Session.get("page_tree"))).length == 0)
       "navbar-fixed-top"
     else
       ""
@@ -19,4 +19,4 @@ Template.navbar.helpers
 
 Template.navbar.events =
   'click .nav-link' : ->
-    Session.set("cur_page", Session.find_elem(this.toString(), Session.page_tree))
+    Session.set("cur_page", Session.find_elem(this.toString(), Session.get("page_tree")))

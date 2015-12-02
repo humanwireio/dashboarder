@@ -1,6 +1,6 @@
 Package.describe({
   name: 'bgrayburn:dashboarder',
-  version: '0.0.2',
+  version: '0.0.6',
   // Brief, one-line summary of the package.
   summary: 'build a page tree and bootstrap navigation with a single hashmap',
   // URL to the Git repository containing the source code for this package.
@@ -16,9 +16,18 @@ Package.onUse(function(api) {
   api.use('templating','client');
   api.use('coffeescript');
   api.use('underscore');
-  api.use('mizzao:bootstrap-3@3.3.1_1')
+  api.use('mizzao:bootstrap-3@3.3.1_1');
   api.use('session');
+  api.use('mongo')
   api.use('tracker');
+  api.use('fourseven:scss@3.4.1');
+  //api.use("d3js:d3")
+  //api.use('react');
+  //api.use('browserify:react-d3');
+  //api.export('ReactDOM');
+
+  api.addFiles('collections.js',['server','client']);
+  api.export('Data',['server','client']);
 
   api.addFiles('navbars.html','client');
   api.addFiles('navbars.coffee','client');
@@ -31,9 +40,13 @@ Package.onUse(function(api) {
 
   api.addFiles('blank.html','client');
 
+  //api.addFiles('graph.html','client');
+  //api.addFiles('graph.coffee','client');
+
   api.addFiles('dashboarder.html','client');
   api.addFiles('dashboarder.coffee','client');
   api.addFiles('dashboarder.css','client');
+  api.addFiles('app.scss','client')
 });
 
 Package.onTest(function(api) {

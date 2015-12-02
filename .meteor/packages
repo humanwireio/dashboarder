@@ -11,6 +11,9 @@ jquery
 underscore
 coffeescript
 
-chriswessels:hammer
+d3js:d3
+browserify:react-d3
+react
 standard-minifiers
 bgrayburn:dashboarder
+fourseven:scss

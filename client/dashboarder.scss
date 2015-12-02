@@ -1,0 +1,30 @@
+body {
+  background: black;
+  color: white;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  svg.rd3-chart {
+    display:block;
+    margin:auto;
+
+    .rd3-linechart-xaxis, .rd3-linechart-yaxis {
+      path{
+        fill: none;
+        stroke: white;
+        stroke-width: 1.5px;
+      }
+    }
+
+    text {
+      fill: white;
+      stroke: white;
+    }
+
+  }
+
+  ul.rd3-legend {
+    span {
+      color: white !important;
+    }
+  }
+}
