@@ -15,7 +15,7 @@ How to use it
 
 Essentially, you edit a hashmap that defines the page structure of the dashboard and the views associated with different states of the navbars. Practically,:
 
-1. `meteor add bgrayburn:dashboarder`
+1. `meteor add bgrayburn:dashboarder@0.0.2`
 2. define `Session.page_tree` on client, keys are navigation lables, values are either subtrees or, if a leaf, the name of a template to be rendered at that position.
 This variable is treated like a hashmap using underscore. Keys are the titles shown in the navbar, properties are either another hashmap defining a subtree or a string with the name of the template associated with that title. Now you can add any content you want to the views as templates utilizing meteors real-time data syncing awesomeness.
 
