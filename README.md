@@ -21,4 +21,4 @@ This variable is treated like a hashmap using underscore. Keys are the titles sh
 
 Dependency
 ------
-*meteor 0.9
+*meteor 1.2.1
